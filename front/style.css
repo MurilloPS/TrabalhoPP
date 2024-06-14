@@ -1,0 +1,93 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #fdf5e6; /* Fundo com tom de pergaminho */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #8b4513; /* Cor terrosa */
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left {
+    margin-left: 15px;
+}
+
+.nav-right {
+    margin-right: 15px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    padding: 20px;
+}
+
+section#intro {
+    background-color: rgba(255, 239, 213, 0.9); /* Fundo com transparência para efeito de pergaminho */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 60%;
+    text-align: center;
+    border: 1px solid #8b4513; /* Borda de cor terrosa */
+}
+
+section#intro h1 {
+    color: #8b4513; /* Cor terrosa */
+}
+
+section#intro p, section#intro ul {
+    color: #4b3621; /* Cor escura para texto */
+}
+
+section#intro ul {
+    text-align: left;
+    margin: 20px 0;
+}
+
+section#intro button {
+    background-color: #d2b48c; /* Cor de fundo do botão terroso */
+    color: #4b3621; /* Cor escura para texto */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+section#intro button:hover {
+    background-color: #c0a16b; /* Cor mais escura no hover */
+}
