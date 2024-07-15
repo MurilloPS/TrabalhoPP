@@ -1,7 +1,30 @@
-async function getUser(){
-    const data={email'email@email.com', password: '123'}
-    const response= await fetch('http://localhost:300/api/login'{
-    method: "POST",
-    Headers: {"Content-Type":"application/js"},
-    body: JSON.stringify(data)
+let button = document.getElementById("handleSubmit");
+
+button.onclick = async function () {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+  
+    let data = { name, email, password };
+
+    console.log("Dados do formulário:", data); 
+
+    const response = await fetch('http://localhost:3001/api/user/create', {
+        method: "POST",
+        headers: { "Content-Type": "application/json;charset=UTF-8" },
+        body: JSON.stringify(data)
     });
+
+    try {
+        const content = await response.json();
+        console.log("Resposta do servidor:", content); 
+        if (content.success) {
+            alert("Sucesso");
+        } else {
+            alert("Erro ao enviar os dados.");
+        }
+    } catch (error) {
+        console.error("Erro ao processar a resposta do servidor:", error);
+        alert("Erro ao processar a resposta do servidor. Por favor, tente novamente.");
+    }
+};
