@@ -1,12 +1,12 @@
 body {
     font-family: 'Times New Roman', serif;
-    background-color: #fdf5e6; /* Fundo com tom de pergaminho */
+    background-color: #fdf5e6; 
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #8b4513; /* Cor terrosa */
+    background-color: #8b4513; 
     color: #fff;
     padding: 10px 0;
     display: flex;
@@ -55,21 +55,21 @@ main {
 }
 
 section#intro {
-    background-color: rgba(255, 239, 213, 0.9); /* Fundo com transparência para efeito de pergaminho */
+    background-color: rgba(255, 239, 213, 0.9);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     width: 60%;
     text-align: center;
-    border: 1px solid #8b4513; /* Borda de cor terrosa */
+    border: 1px solid #8b4513; 
 }
 
 section#intro h1 {
-    color: #8b4513; /* Cor terrosa */
+    color: #8b4513; 
 }
 
 section#intro p, section#intro ul {
-    color: #4b3621; /* Cor escura para texto */
+    color: #4b3621; 
 }
 
 section#intro ul {
@@ -78,8 +78,8 @@ section#intro ul {
 }
 
 section#intro button {
-    background-color: #d2b48c; /* Cor de fundo do botão terroso */
-    color: #4b3621; /* Cor escura para texto */
+    background-color: #d2b48c; 
+    color: #4b3621; 
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -89,5 +89,5 @@ section#intro button {
 }
 
 section#intro button:hover {
-    background-color: #c0a16b; /* Cor mais escura no hover */
+    background-color: #c0a16b; 
 }

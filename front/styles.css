@@ -1,12 +1,12 @@
 body {
     font-family: 'Times New Roman', serif;
-    background-color: #fdf5e6; /* Fundo com tom de pergaminho */
+    background-color: #fdf5e6;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url('background.jpg'); /* Opcional: adicionar imagem de fundo que remete a história */
+    background-image: url('background.jpg'); 
     background-size: cover;
 }
 
@@ -14,25 +14,25 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: rgba(255, 239, 213, 0.9); /* Fundo com transparência para efeito de pergaminho */
+    background-color: rgba(255, 239, 213, 0.9); 
     padding: 10px;
     border-radius: 4px;
-    border: 1px solid #8b4513; /* Borda de cor terrosa */
+    border: 1px solid #8b4513; 
 }
 
 .container {
-    background-color: rgba(255, 239, 213, 0.9); /* Fundo com transparência para efeito de pergaminho */
+    background-color: rgba(255, 239, 213, 0.9); 
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     width: 400px;
     text-align: center;
-    border: 1px solid #8b4513; /* Borda de cor terrosa */
+    border: 1px solid #8b4513; 
 }
 
 h1 {
-    color: #8b4513; /* Cor terrosa para o título */
-}
+    color: #8b4513;
+} 
 
 .question-container {
     margin-bottom: 20px;
@@ -41,7 +41,7 @@ h1 {
 .question {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #4b3621; /* Cor escura para texto */
+    color: #4b3621; 
 }
 
 .answers button {
@@ -49,8 +49,8 @@ h1 {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #d2b48c; /* Cor de fundo do botão terroso */
-    color: #4b3621; /* Cor escura para texto */
+    background-color: #d2b48c; 
+    color: #4b3621; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -59,17 +59,17 @@ h1 {
 }
 
 .answers button.correct {
-    background-color: #28a745; /* Verde para respostas corretas */
+    background-color: #28a745; 
     color: #fff;
 }
 
 .answers button.incorrect {
-    background-color: #dc3545; /* Vermelho para respostas incorretas */
+    background-color: #dc3545; 
     color: #fff;
 }
 
 .answers button:hover {
-    background-color: #c0a16b; /* Cor mais escura no hover */
+    background-color: #c0a16b; 
 }
 
 .answers button:disabled {
@@ -78,5 +78,5 @@ h1 {
 
 #pontuacao {
     font-size: 18px;
-    color: #4b3621; /* Cor escura para o texto da pontuação */
+    color: #4b3621; 
 }
