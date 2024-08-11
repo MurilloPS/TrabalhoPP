@@ -112,3 +112,26 @@ function submitScore(pontuacao) {
         alert("Erro ao salvar a pontuação.");
     });
 }
+function submitScore(pontuacao) {
+    console.log("Enviando pontuação:", pontuacao);
+    fetch('/enviar-pontuacao', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ pontuacao })
+    })
+    .then(response => {
+        console.log("Resposta da API:", response);
+        return response.text();
+    })
+    .then(data => {
+        console.log("Dados da resposta:", data);
+        alert("Pontuação salva com sucesso!");
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert("Erro ao salvar a pontuação.");
+    });
+}
+
