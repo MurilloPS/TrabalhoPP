@@ -1,5 +1,3 @@
-// src/controllers/authController.js
-
 const db = require('../config/database');
 
 exports.login = (req, res) => {
