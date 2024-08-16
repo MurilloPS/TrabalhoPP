@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('http://localhost:3001/api/ranking', {
+    fetch('http://loacalhost:3001/api/ranking', {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=UTF-8'
+            'Content-Type': 'application/json'
         }
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao carregar o ranking.');
+        }
+        return response.json();
+    })
     .then(data => {
+        if (!Array.isArray(data)) {
+            throw new TypeError('Dados do ranking não são um array.');
+        }
+
         const rankingBody = document.getElementById('ranking-body');
         rankingBody.innerHTML = '';
 
@@ -17,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             positionCell.innerText = index + 1;
 
             const nameCell = document.createElement('td');
-            nameCell.innerText = user.nome;
+            nameCell.innerText = user.user_name; // Certifique-se de usar o campo correto
 
             const scoreCell = document.createElement('td');
             scoreCell.innerText = user.pontuacao;

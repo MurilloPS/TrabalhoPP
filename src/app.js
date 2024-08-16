@@ -3,8 +3,7 @@ const dotenv=require('dotenv').config();
 const gamihisRouter=require('./routes/gamihisRouter');
 const usersRouter= require('./routes/usersRouter');
 const loginRouter=require('./routes/loginrouter');
-const authRoutes=require('./routes/authRoutes');
-const scoreRoutes=require('./routes/scoreRoutes');
+;const scoreRoutes=require('./routes/scoreRoutes');
 const cors =require('cors');
 
 const app=express();
@@ -15,6 +14,5 @@ app.use(cors());
 app.use('/api', gamihisRouter);
 app.use('/api', usersRouter);
 app.use('/api', loginRouter);
-app.use('/api', authRoutes);
 app.use('/api', scoreRoutes)
 module.exports=app;

@@ -49,10 +49,10 @@ const questions = [
     }
 ];
 
-// Função para inicializar a exibição da primeira pergunta ao carregar a página
+
 document.addEventListener("DOMContentLoaded", showQuestion);
 
-// Função para exibir a pergunta atual
+
 function showQuestion() {
     const questionElement = document.getElementById('pergunta');
     const answersElement = document.getElementById('respostas');
@@ -61,7 +61,7 @@ function showQuestion() {
     questionElement.innerText = currentQuestion.question;
     answersElement.innerHTML = '';
 
-    // Criar botões para cada resposta
+ 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
         button.innerText = answer.text;
@@ -70,7 +70,7 @@ function showQuestion() {
     });
 }
 
-// Função para verificar a resposta escolhida
+
 function checkAnswer(isCorrect) {
     if (isCorrect) {
         pontuacao++;
@@ -88,50 +88,61 @@ function checkAnswer(isCorrect) {
     }
 }
 
-// Função para atualizar a pontuação na tela
+
 function updateScore() {
     document.getElementById("pontuacao").innerText = "Pontuação: " + pontuacao;
 }
 
-// Função para enviar a pontuação final ao servidor
-function submitScore(pontuacao) {
-    fetch('/enviar-pontuacao', {
+
+// function submitScore(pontuacao) {
+//     const userName = prompt("Por favor, insira seu nome para o ranking:");
+
+//     fetch('http://localhost:3001/api/enviar-pontuacao', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ pontuacao, userName })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         alert("Pontuação salva com sucesso!");
+//         window.location.href = "ranking.html"; 
+//     })
+//     .catch(error => {
+//         console.error('Erro ao salvar a pontuação:', error);
+//         alert("Erro ao salvar a pontuação.");
+//     });
+// }
+// script.js
+
+async function submitScore(pontuacao) {
+    const userName = prompt("Por favor, insira seu nome para o ranking:");
+    
+  
+    console.log("Enviando pontuação:", pontuacao, "Nome do usuário:", userName);
+
+    const response= await fetch('http://localhost:3001/api/score/routes', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json;charset=UTF-8'
         },
-        body: JSON.stringify({ pontuacao })
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log(data);
-        alert("Pontuação salva com sucesso!");
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert("Erro ao salvar a pontuação.");
-    });
-}
-function submitScore(pontuacao) {
-    console.log("Enviando pontuação:", pontuacao);
-    fetch('/enviar-pontuacao', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ pontuacao })
+        body: JSON.stringify({ pontuacao, userName }) 
     })
     .then(response => {
-        console.log("Resposta da API:", response);
-        return response.text();
+        if (!response.ok) {
+            throw new Error('Erro ao enviar a pontuação.');
+        }
+        return response.json();
     })
     .then(data => {
-        console.log("Dados da resposta:", data);
         alert("Pontuação salva com sucesso!");
+        window.location.href = "/ranking.html"; 
     })
     .catch(error => {
-        console.error('Erro:', error);
+        console.error('Erro ao salvar a pontuação:', error);
         alert("Erro ao salvar a pontuação.");
     });
 }
+
 

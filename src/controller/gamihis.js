@@ -5,7 +5,7 @@ async function storeTask(request, response){
     const pontuation=(request.body.pontuacao);
    
     const query="INSERT INTO pontuation(pontuacao) VALUES(?)";
-    connection.query(query, params, (err, results)=>{
+    connection.query(query,  (err, results)=>{
         if(results){
             response
               .status(201)
