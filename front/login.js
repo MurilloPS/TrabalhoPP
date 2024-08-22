@@ -20,6 +20,7 @@ button.onclick = async function () {
         console.log("Resposta do servidor:", content); 
         if (content.success) {
             alert("Sucesso");
+            window.location.href = "landing.html"; 
         } else {
             alert("Erro ao enviar os dados.");
         }
