@@ -53,7 +53,7 @@ button.onclick = async function () {
 
         if (content.success) {
             alert("Sucesso");
-            window.location.href = "landing.html"; 
+            window.location.href = "login.html"; 
         } else {
             alert("Erro ao enviar os dados.");
         }
