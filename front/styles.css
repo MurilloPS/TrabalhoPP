@@ -1,13 +1,14 @@
 body {
     font-family: 'Times New Roman', serif;
-    background-color: #fdf5e6;
+    background-color: #fff9e8;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-
+    background-image: url('quiz-background.jpg');
     background-size: cover;
+    background-position: center;
 }
 
 .score-container {
@@ -15,47 +16,50 @@ body {
     top: 10px;
     left: 10px;
     background-color: rgba(255, 239, 213, 0.9); 
-    padding: 10px;
+    padding: 12px;
     border-radius: 4px;
-    border: 1px solid #8b4513; 
+    border: 2px solid #8b4513; 
 }
 
 .container {
     background-color: rgba(255, 239, 213, 0.9); 
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    width: 400px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    width: 450px;
     text-align: center;
-    border: 1px solid #8b4513; 
+    border: 2px solid #8b4513; 
 }
 
 h1 {
     color: #8b4513;
-} 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
 
 .question-container {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .question {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
     color: #4b3621; 
+    font-weight: bold;
 }
 
 .answers button {
     display: block;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
     background-color: #d2b48c; 
     color: #4b3621; 
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .answers button.correct {
@@ -70,6 +74,7 @@ h1 {
 
 .answers button:hover {
     background-color: #c0a16b; 
+    transform: scale(1.05);
 }
 
 .answers button:disabled {
@@ -79,4 +84,5 @@ h1 {
 #pontuacao {
     font-size: 18px;
     color: #4b3621; 
+    font-weight: bold;
 }

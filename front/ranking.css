@@ -1,23 +1,23 @@
 body {
     font-family: 'Times New Roman', serif;
-    background-color: #fdf5e6;
+    background-color: #fff9e8;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    background-image: url('historic-background2.jpg');
     background-size: cover;
+    background-position: center;
 }
 
 header {
     width: 100%;
     background-color: #8b4513;
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
 
 nav ul {
     list-style: none;
@@ -29,19 +29,19 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 15px; 
+    margin-right: 20px; 
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #fdf5e6;
+    color: #ffddc1;
 }
 
 main {
@@ -53,19 +53,20 @@ main {
 }
 
 #ranking-section {
-    background-color: rgba(255, 239, 213, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid #8b4513;
+    background-color: rgba(255, 239, 213, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid #8b4513;
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
 }
 
 h1 {
     color: #8b4513;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 #ranking-table {
@@ -74,7 +75,7 @@ h1 {
 }
 
 #ranking-table th, #ranking-table td {
-    padding: 12px 15px;
+    padding: 14px 18px;
     border: 1px solid #8b4513;
     text-align: left;
     font-size: 16px;
@@ -85,14 +86,15 @@ h1 {
     background-color: #8b4513;
     color: white;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 #ranking-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #faf3dd;
 }
 
 #ranking-table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #ffedd5;
 }
 
 #ranking-table tr td:first-child {
