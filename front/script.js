@@ -127,9 +127,16 @@ function updateScore() {
 
 
 async function submitScore(pontuacao) {
-    const userName = prompt("Por favor, insira seu nome para o ranking:");
+    // Recupera o 'user_id' do localStorage
+    const user_id = localStorage.getItem('userId');
 
-    console.log("Enviando pontuação:", pontuacao, "Nome do usuário:", userName);
+    // Se o 'user_id' for undefined, exibe um erro
+    if (!user_id) {
+        alert("Erro: ID do usuário não encontrado.");
+        return;
+    }
+
+    console.log("Enviando pontuação:", pontuacao, "ID do usuário:", user_id);
 
     try {
         const response = await fetch('http://localhost:3001/api/score/routes', {
@@ -137,7 +144,7 @@ async function submitScore(pontuacao) {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8'
             },
-            body: JSON.stringify({ pontuacao, userName })
+            body: JSON.stringify({ pontuacao, user_id })  // Envia o 'user_id' junto com a pontuação
         });
 
         if (!response.ok) {
