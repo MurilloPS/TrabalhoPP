@@ -96,41 +96,10 @@ function updateScore() {
 
 
 
-// async function submitScore(pontuacao) {
-//     const userName = prompt("Por favor, insira seu nome para o ranking:");
-    
-  
-//     console.log("Enviando pontuação:", pontuacao, "Nome do usuário:", userName);
-
-//     const response= await fetch('http://localhost:3001/api/score/routes', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json;charset=UTF-8'
-//         },
-//         body: JSON.stringify({ pontuacao, userName }) 
-//     })
-//     .then(response => {
-//         if (!response.ok) {
-//             throw new Error('Erro ao enviar a pontuação.');
-//         }
-//         return response.json();
-//     })
-//     .then(data => {
-//         alert("Pontuação salva com sucesso!");
-//         window.location.href = "/ranking.html"; 
-//     })
-//     .catch(error => {
-//         console.error('Erro ao salvar a pontuação:', error);
-//         alert("Erro ao salvar a pontuação.");
-//     });
-// }
-
-
 async function submitScore(pontuacao) {
     // Recupera o 'user_id' do localStorage
     const user_id = localStorage.getItem('userId');
 
-    // Se o 'user_id' for undefined, exibe um erro
     if (!user_id) {
         alert("Erro: ID do usuário não encontrado.");
         return;
@@ -144,18 +113,23 @@ async function submitScore(pontuacao) {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8'
             },
-            body: JSON.stringify({ pontuacao, user_id })  // Envia o 'user_id' junto com a pontuação
+            body: JSON.stringify({ pontuacao, user_id })  // Envia a pontuação e o 'user_id'
         });
 
         if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Erro ao salvar a pontuação:', errorText);
             throw new Error('Erro ao enviar a pontuação.');
         }
 
         const data = await response.json();
         alert("Pontuação salva com sucesso!");
-        window.location.href = "ranking.html";
+        window.location.href = "ranking.html";  // Redireciona para o ranking após salvar a pontuação
     } catch (error) {
         console.error('Erro ao salvar a pontuação:', error);
         alert("Erro ao salvar a pontuação.");
     }
 }
+
+
+

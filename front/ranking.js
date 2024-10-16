@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 positionCell.innerText = index + 1;
 
                 const nameCell = document.createElement('td');
-                nameCell.innerText = user.user_name;
+                nameCell.innerText = user.name;
 
                 const scoreCell = document.createElement('td');
                 scoreCell.innerText = user.pontuacao;

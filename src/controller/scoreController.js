@@ -28,6 +28,7 @@ exports.saveScore = async (req, res) => {
 };
 
 
+
 exports.getRanking = (req, res) => {
     const query = `
         SELECT users.name, pontuation.pontuacao 
