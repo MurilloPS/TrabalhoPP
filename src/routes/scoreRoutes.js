@@ -6,11 +6,11 @@ const router = express.Router();
 /**
 * @swagger
 * /scoreroutes:
-*   get:
-*     summary: Posta a pontuação
+*   post:
+*     summary: Rota para pontuação
 *     responses:
 *       200:
-*         description: Pontuação
+*         description: Rota para armazenar a pontuação
 *         content:
 *           application/json:
 *             schema:
@@ -26,7 +26,7 @@ router.post('/score/routes', scoreController.saveScore);
 *     summary: Retorna os rankings
 *     responses:
 *       200:
-*         description: Uma lista de rankeamento
+*         description: Rota necessária para a lista de rankeamento
 *         content:
 *           application/json:
 *             schema:
