@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -33,6 +33,53 @@
             </table>
         </section>
     </main>
+    <script src="ranking.js"></script>
+</body>
+</html> -->
+<!-- ranking.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking de Pontuações</title>
+    <link rel="stylesheet" href="ranking.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="landing.html">Início</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Ranking de Pontuações</h1>
+        <label for="level-select">Nível:</label>
+        <select id="level-select" onchange="loadRanking()">
+            <option value="fundamental">Ensino Fundamental</option>
+            <option value="medio">Ensino Médio</option>
+        </select>
+
+        <label for="topic-select">Tema:</label>
+        <select id="topic-select" onchange="loadRanking()">
+            <option value="descobrimento">Descobrimento do Brasil</option>
+            <option value="ditadura">Ditadura Militar</option>
+        </select>
+
+        <table id="ranking-table">
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Nome</th>
+                    <th>Pontuação</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-body"></tbody>
+        </table>
+    </main>
+
     <script src="ranking.js"></script>
 </body>
 </html>

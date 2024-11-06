@@ -1,81 +1,48 @@
-<!-- <!DOCTYPE html>
+<!-- landing.html -->
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamificação no Ensino de História</title>
+    <title>Bem-vindo ao Quiz de História</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
+                <li><a href="landing.html">Início</a></li>
+                <li><a href="inde.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
                 <li><a href="ranking.html">Ranking</a></li>
-                <li><a href="./inde.html">Cadastro</a></li>
-                <li><a href="./login.html">Login</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <section id="intro">
-            <h1>Gamificação no Ensino de História</h1>
-            <p>A gamificação no ensino de história utiliza elementos de jogos para tornar o aprendizado mais envolvente e eficaz. Esta abordagem pode ajudar os alunos a se engajarem mais profundamente com o conteúdo, aumentando a retenção de informações e tornando o estudo da história mais divertido e interativo.</p>
-            <p>Benefícios da gamificação no ensino de história:</p>
-            <ul>
-                <li>Engajamento: Jogos tornam o aprendizado mais interessante e envolvente.</li>
-                <li>Motivação: Elementos como pontuações e recompensas incentivam os alunos a participarem mais ativamente.</li>
-                <li>Retenção: Atividades interativas ajudam na melhor retenção de informações.</li>
-                <li>Colaboração: Muitos jogos promovem o trabalho em equipe e a colaboração entre os alunos.</li>
-            </ul>
-            <button onclick="startQuiz()">Comece Já</button>
+            <h1>Quiz de História</h1>
+            <p>Escolha seu nível e tema preferido para começar seu quiz sobre a História do Brasil!</p>
+        </section>
+
+        <section id="quiz-selection">
+            <h2>Selecione o Quiz</h2>
+            <label for="level-select">Nível de Ensino:</label>
+            <select id="level-select">
+                <option value="fundamental">Ensino Fundamental</option>
+                <option value="medio">Ensino Médio</option>
+            </select>
+
+            <label for="topic-select">Tema:</label>
+            <select id="topic-select">
+                <option value="descobrimento">Descobrimento do Brasil</option>
+                <option value="ditadura">Ditadura Militar</option>
+            </select>
+
+            <button onclick="startQuiz()">Começar Quiz</button>
         </section>
     </main>
-    <script src="botao.js"></script>
-</body>
-</html> -->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha o Quiz</title>
-    <link rel="stylesheet" href="landing.css">
-</head>
-<body>
-    <h1>Bem-vindo ao Quiz de História</h1>
-    <p>Escolha o tema e o nível:</p>
-    <div class="quiz-selection">
-        <button onclick="startQuiz('fundamental', 'descobrimento')">Fundamental - Descobrimento do Brasil</button>
-        <button onclick="startQuiz('fundamental', 'ditadura')">Fundamental - Ditadura Militar</button>
-        <button onclick="startQuiz('medio', 'descobrimento')">Médio - Descobrimento do Brasil</button>
-        <button onclick="startQuiz('medio', 'ditadura')">Médio - Ditadura Militar</button>
-    </div>
-    <script>
-        function startQuiz(level, topic) {
-            localStorage.setItem('quizLevel', level);
-            localStorage.setItem('quizTopic', topic);
-            window.location.href = "index.html";
-        }
-    </script>
-    <div class="ranking-filters">
-        <label for="level-select">Escolha o Nível:</label>
-        <select id="level-select">
-            <option value="fundamental">Ensino Fundamental</option>
-            <option value="medio">Ensino Médio</option>
-        </select>
-    
-        <label for="topic-select">Escolha o Conteúdo:</label>
-        <select id="topic-select">
-            <option value="ditadura">Ditadura Militar</option>
-            <option value="descobrimento">Descobrimento do Brasil</option>
-        </select>
-    
-        <button onclick="loadRanking()">Ver Ranking</button>
-    </div>
-    
-    <table id="ranking-table">
-        <!-- Conteúdo da tabela de ranking -->
-    </table>
-    
+
+    <script src="landing.js"></script>
 </body>
 </html>
