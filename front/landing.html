@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -31,5 +31,51 @@
         </section>
     </main>
     <script src="botao.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha o Quiz</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <h1>Bem-vindo ao Quiz de História</h1>
+    <p>Escolha o tema e o nível:</p>
+    <div class="quiz-selection">
+        <button onclick="startQuiz('fundamental', 'descobrimento')">Fundamental - Descobrimento do Brasil</button>
+        <button onclick="startQuiz('fundamental', 'ditadura')">Fundamental - Ditadura Militar</button>
+        <button onclick="startQuiz('medio', 'descobrimento')">Médio - Descobrimento do Brasil</button>
+        <button onclick="startQuiz('medio', 'ditadura')">Médio - Ditadura Militar</button>
+    </div>
+    <script>
+        function startQuiz(level, topic) {
+            localStorage.setItem('quizLevel', level);
+            localStorage.setItem('quizTopic', topic);
+            window.location.href = "index.html";
+        }
+    </script>
+    <div class="ranking-filters">
+        <label for="level-select">Escolha o Nível:</label>
+        <select id="level-select">
+            <option value="fundamental">Ensino Fundamental</option>
+            <option value="medio">Ensino Médio</option>
+        </select>
+    
+        <label for="topic-select">Escolha o Conteúdo:</label>
+        <select id="topic-select">
+            <option value="ditadura">Ditadura Militar</option>
+            <option value="descobrimento">Descobrimento do Brasil</option>
+        </select>
+    
+        <button onclick="loadRanking()">Ver Ranking</button>
+    </div>
+    
+    <table id="ranking-table">
+        <!-- Conteúdo da tabela de ranking -->
+    </table>
+    
 </body>
 </html>

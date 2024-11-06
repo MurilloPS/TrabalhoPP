@@ -27,7 +27,7 @@ button.onclick = async function () {
             const userId = content.data[0].id;
             localStorage.setItem('userId', userId);
             alert("Login bem-sucedido");
-            window.location.href = "index.html";
+            window.location.href = "landing.html";
         }
     } catch (error) {
         console.error("Erro ao processar a resposta do servidor:", error);
