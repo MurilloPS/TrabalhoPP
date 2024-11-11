@@ -52,10 +52,22 @@ button.onclick = async function () {
         console.log("Resposta do servidor:", content);
 
         if (content.success) {
-            alert("Sucesso");
-            window.location.href = "login.html"; 
+           
+            Swal.fire({
+                icon: "success",
+                title: "Sucesso no login!",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                window.location.href = 'login.html';
+            });
         } else {
-            alert("Erro ao enviar os dados.");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                
+              });
         }
     } catch (error) {
         console.error("Erro ao processar a resposta do servidor:", error);

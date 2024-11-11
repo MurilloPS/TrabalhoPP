@@ -4,7 +4,7 @@ button.onclick = async function () {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
-    // Certifique-se de que o email e a senha não estão vazios
+
     if (!email || !password) {
         alert("Por favor, preencha todos os campos.");
         return;
@@ -22,12 +22,24 @@ button.onclick = async function () {
         const content = await response.json();
 
         if (response.status === 401) {
-            alert("Email ou senha incorretos.");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                
+              });
         } else if (content.success) {
             const userId = content.data[0].id;
             localStorage.setItem('userId', userId);
-            alert("Login bem-sucedido");
-            window.location.href = "landing.html";
+            Swal.fire({
+                icon: "success",
+                title: "Sucesso no login!",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                window.location.href = 'landing.html';
+            });
+
         }
     } catch (error) {
         console.error("Erro ao processar a resposta do servidor:", error);
