@@ -1,11 +1,10 @@
-<!-- landing.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-vindo ao Quiz de História</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landing.css">
 </head>
 <body>
     <header>
@@ -20,29 +19,72 @@
     </header>
 
     <main>
-        <section id="intro">
+        <!-- Bloco de introdução e botões -->
+        <section id="intro-block">
             <h1>Quiz de História</h1>
-            <p>Escolha seu nível e tema preferido para começar seu quiz sobre a História do Brasil!</p>
+            <p>Explore a história do Brasil através de quizzes interativos. Escolha seu nível e tema preferido para começar!</p>
+
+            <!-- Botões de seleção -->
+            <div id="quiz-selection">
+                <div id="ranking-filters">
+                    <label for="level-select">Nível de Ensino:</label>
+                    <select id="level-select">
+                        <option value="fundamental">Ensino Fundamental</option>
+                        <option value="medio">Ensino Médio</option>
+                    </select>
+
+                    <label for="topic-select">Tema:</label>
+                    <select id="topic-select">
+                        <option value="descobrimento">Descobrimento do Brasil</option>
+                        <option value="ditadura">Ditadura Militar</option>
+                    </select>
+                </div>
+                <button class="start-quiz-button" onclick="startQuiz()">Começar Quiz</button>
+            </div>
         </section>
 
-        <section id="quiz-selection">
-            <h2>Selecione o Quiz</h2>
-            <label for="level-select">Nível de Ensino:</label>
-            <select id="level-select">
-                <option value="fundamental">Ensino Fundamental</option>
-                <option value="medio">Ensino Médio</option>
-            </select>
-
-            <label for="topic-select">Tema:</label>
-            <select id="topic-select">
-                <option value="descobrimento">Descobrimento do Brasil</option>
-                <option value="ditadura">Ditadura Militar</option>
-            </select>
-
-            <button onclick="startQuiz()">Começar Quiz</button>
+        <!-- Seção de Dicas de Gamificação -->
+        <section id="gamification-tips">
+            <h2>Como Gamificar sua Aula</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <h3>Crie Desafios e Recompensas</h3>
+                    <p>Implemente um sistema de pontos para atividades concluídas, e ofereça prêmios simbólicos para motivação.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Use Avatares e Personagens</h3>
+                    <p>Permita que os alunos escolham avatares ou personagens para representá-los nas atividades.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Incorpore Minijogos</h3>
+                    <p>Inclua quizzes rápidos ou enigmas entre as aulas para quebrar a monotonia e reforçar o aprendizado.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Explore Narrativas</h3>
+                    <p>Transforme a aula em uma jornada, com missões e enredos que se conectem ao conteúdo estudado.</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <script src="landing.js"></script>
+    <script>
+        function startQuiz() {
+            const level = document.getElementById("level-select").value;
+            const topic = document.getElementById("topic-select").value;
+
+            if (!level || !topic) {
+                alert("Por favor, selecione um nível e um tema.");
+                return;
+            }
+
+            localStorage.setItem("quizLevel", level);
+            localStorage.setItem("quizTopic", topic);
+
+            window.location.href = "index.html";
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Dicas de Gamificação. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

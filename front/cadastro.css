@@ -10,7 +10,7 @@ body {
     background-size: cover;
 }
 
-/* Estilo da seção de contato */
+
 .contato-section {
     background-color: rgba(255, 239, 213, 0.9); 
     padding: 20px;
@@ -34,8 +34,20 @@ form label {
     margin-bottom: 5px;
     color: #4b3621;
 }
+#name{
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #8b4513;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: #fff; 
+    box-sizing: border-box;
+}
 
-/* Estilo dos campos de entrada */
+
+
 form input[type="email"],
 form input[type="password"] {
     width: 80%;
