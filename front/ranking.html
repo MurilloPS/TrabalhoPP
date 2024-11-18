@@ -21,30 +21,32 @@
 
             <!-- Seção de seleção -->
             <div id="ranking-filters">
-                <label for="level-select">Nível:</label>
-                <select id="level-select" onchange="loadRanking()">
-                    <option value="fundamental">Ensino Fundamental</option>
-                    <option value="medio">Ensino Médio</option>
-                </select>
+    <label for="level-select">Nível:</label>
+    <select id="level-select" onchange="loadRanking()">
+        <option value="fundamental">Ensino Fundamental</option>
+        <option value="medio">Ensino Médio</option>
+    </select>
 
-                <label for="topic-select">Tema:</label>
-                <select id="topic-select" onchange="loadRanking()">
-                    <option value="descobrimento">Descobrimento do Brasil</option>
-                    <option value="ditadura">Ditadura Militar</option>
-                </select>
-            </div>
+    <label for="topic-select">Tema:</label>
+    <select id="topic-select" onchange="loadRanking()">
+        <option value="descobrimento">Descobrimento do Brasil</option>
+        <option value="ditadura">Ditadura Militar</option>
+    </select>
+</div>
 
-            <!-- Tabela de ranking -->
-            <table id="ranking-table">
-                <thead>
-                    <tr>
-                        <th>Posição</th>
-                        <th>Nome</th>
-                        <th>Pontuação</th>
-                    </tr>
-                </thead>
-                <tbody id="ranking-body"></tbody>
-            </table>
+<table id="ranking-table">
+    <thead>
+        <tr>
+            <th>Posição</th>
+            <th>Nome</th>
+            <th>Pontuação</th>
+        </tr>
+    </thead>
+    <tbody id="ranking-body">
+        <!-- Ranking rows will be dynamically added here -->
+    </tbody>
+</table>
+
         </div>
     </main>
 

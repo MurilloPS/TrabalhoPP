@@ -55,7 +55,7 @@ button.onclick = async function () {
            
             Swal.fire({
                 icon: "success",
-                title: "Sucesso no login!",
+                title: "Sucesso no cadastro!",
                 showConfirmButton: false,
                 timer: 1500
             }).then(() => {

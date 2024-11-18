@@ -29,12 +29,14 @@ exports.getRanking = (req, res) => {
     const { level, topic } = req.query;
 
     const query = `
-        SELECT users.name, pontuation.pontuacao 
-        FROM pontuation 
-        JOIN users ON pontuation.user_id = users.id 
-        WHERE pontuation.level = ? AND pontuation.topic = ?
-        ORDER BY pontuacao DESC LIMIT 10
-    `;
+    SELECT users.name, pontuation.pontuacao 
+    FROM pontuation 
+    JOIN users ON pontuation.user_id = users.id 
+    WHERE pontuation.level = ? AND pontuation.topic = ?
+    ORDER BY pontuation.pontuacao DESC LIMIT 10;
+`;
+
+
 
     connection.query(query, [level, topic], (err, results) => {
         if (err) {
